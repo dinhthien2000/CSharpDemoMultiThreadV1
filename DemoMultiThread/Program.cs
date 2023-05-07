@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 internal class Program
 {
+    // nếu hàm main trả về kiểu void sẽ dính Lỗi CS5001 Chương trình không chứa phương thức 'Chính' tĩnh phù hợp với điểm vào DemoMultiThread
+    // Nên phải dùng Task làm kiểu trả về
     private static async Task Main(string[] args)
     {
         // các thể hiện này sẽ hứng các giá trị trả về từ các phương thức có kiểu trả về tương ứng.
@@ -27,7 +29,7 @@ internal class Program
 
                 // Create
                 emp = new Employee(i, "thien", "22"); //await sẽ đợi phương thức bất đồng bộ trả về giá trị mới thực thi tiếp
-                                                      //(luồng sẽ dùng lại, ở đây luồng main dùng luôn nên không thể hiện được bất đồng bộ mình muốn là mạnh hoạt động nào nó chạy
+                                                      //(luồng sẽ dừng lại, ở đây luồng main dừng luôn nên không thể hiện được bất đồng bộ mình muốn là mạnh hoạt động nào nó chạy
                                                       //(thêm, xóa, sửa, hiển thị, chạy không đồng bộ)) 
                 employee = createEmployee(emp);
                 display(await employee.ConfigureAwait(false));
