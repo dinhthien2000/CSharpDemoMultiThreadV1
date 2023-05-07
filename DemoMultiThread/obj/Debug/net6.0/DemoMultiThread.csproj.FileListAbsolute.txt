@@ -1,0 +1,17 @@
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.csproj.AssemblyReference.cache
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.GeneratedMSBuildEditorConfig.editorconfig
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.AssemblyInfoInputs.cache
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.AssemblyInfo.cs
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.csproj.CoreCompileInputs.cache
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\DemoMultiThread.exe
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\DemoMultiThread.deps.json
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\DemoMultiThread.runtimeconfig.json
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\DemoMultiThread.dll
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\DemoMultiThread.pdb
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\bin\Debug\net6.0\MySqlConnector.dll
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.csproj.CopyComplete
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.dll
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\refint\DemoMultiThread.dll
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.pdb
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\DemoMultiThread.genruntimeconfig.cache
+C:\IDB_Alan\C#\DemoMultiThread\DemoMultiThread\obj\Debug\net6.0\ref\DemoMultiThread.dll
