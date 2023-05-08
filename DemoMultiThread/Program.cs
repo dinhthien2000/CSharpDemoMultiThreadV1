@@ -17,27 +17,33 @@ internal class Program
 
         try
         {
-            for (int i = 1; i < 101; i++)
-            {
+
                 shortBeginProcess();
 
                 say();
 
-                // Get
-                list = retrieveAll();
-                display(await list.ConfigureAwait(false));
+                //// Get
+                //list = retrieveAll();
+                //display(await list.ConfigureAwait(false));
 
-                // Create
-                emp = new Employee(i, "thien", "22"); //await sẽ đợi phương thức bất đồng bộ trả về giá trị mới thực thi tiếp
-                                                      //(luồng sẽ dừng lại, ở đây luồng main dừng luôn nên không thể hiện được bất đồng bộ mình muốn là mạnh hoạt động nào nó chạy
-                                                      //(thêm, xóa, sửa, hiển thị, chạy không đồng bộ)) 
-                employee = createEmployee(emp);
-                display(await employee.ConfigureAwait(false));
+                //// Create
+                //emp = new Employee(i, "thien", "22"); //await sẽ đợi phương thức bất đồng bộ trả về giá trị mới thực thi tiếp
+                //                                      //(luồng sẽ dừng lại, ở đây luồng main dừng luôn nên không thể hiện được bất đồng bộ mình muốn là mạnh hoạt động nào nó chạy
+                //                                      //(thêm, xóa, sửa, hiển thị, chạy không đồng bộ)) 
+                //employee = createEmployee(emp);
+                //display(await employee.ConfigureAwait(false));
 
-                // Update
-                emp.Name = "thien" + i;
-                employee = updateEmployee(emp);
-                display(await employee.ConfigureAwait(false)); // await sẽ đợi phương thức bất đồng bộ trả về giá trị
+                //// Update
+                //emp.Name = "thien" + i;
+                //employee = updateEmployee(emp);
+                //display(await employee.ConfigureAwait(false)); // await sẽ đợi phương thức bất đồng bộ trả về giá trị
+
+                //emp = new Employee(i, "thien", "22");
+                //retrieveAll();
+                createEmployee();
+                updateEmployee();
+
+
 
                 // Delete
                 /* if (i > 60 && i %2 == 0){
@@ -47,14 +53,15 @@ internal class Program
                     Console.WriteLine(index);
                 }*/
 
-                
+
                 shortEndProcess();
-            }
+            retrieveAll();
+        }
            
             // sau khi test bất đồng bộ thành công xóa hết dữ liệu
             //deleteFrom();
             
-        }
+      
         catch(Exception ex)
         {
             Console.WriteLine(ex);
@@ -62,8 +69,8 @@ internal class Program
 
         // List<Employee> employees = await Task.Run( () => return list ); //Vì 'Program.Main(string[])' là một phương thức không đồng bộ trả về 'Tác vụ',
                                                                            //nên một từ khóa trả về không được theo sau bởi một biểu thức đối tượng DemoMultiThread
-        List<Employee> employees = await Task.Run(() => list );
-        Console.WriteLine("Số lượng employees: "+employees.Count);
+        //List<Employee> employees = await Task.Run(() => list );
+        //Console.WriteLine("Số lượng employees: "+employees.Count);
 
         
 
@@ -118,33 +125,44 @@ internal class Program
 
 
     // Khi phương thức muống trả về giá trị thì phải sài kiểu Task<> generic (VD : Task<List<Employee>> trả về generic Task list employee )
-    static async Task<List<Employee>> retrieveAll() { 
+    static async Task retrieveAll() { 
         EmployeeDao dao = new EmployeeDao();
         
         List<Employee> list =  dao.retrieveAllEmployes();
 
-        return  list;
+        display(list);
     
     }
 
 
-    static async Task<Employee> createEmployee(Employee employee)
+    static async Task createEmployee()
     {
         EmployeeDao dao = new EmployeeDao();
+        Employee emp;
+        for (int i = 1; i < 1001; i++)
+        {
+            emp = new Employee(i, "thien", "22");
+            Employee employeeCreate = dao.createEmployes(emp);
+            //retrieveAll();
+        }
+        
 
-        Employee employeeCreate = dao.createEmployes(employee);
-
-        return employeeCreate;
+       
+        
+        
     }
 
 
-    static async Task<Employee> updateEmployee(Employee employee)
+    static async Task updateEmployee()
     {
         EmployeeDao dao = new EmployeeDao();
-
-        Employee employeeUpdate = dao.updateEmployes(employee);
-
-        return employeeUpdate;
+        Employee emp;
+        for (int i = 1; i < 1001; i++)
+        {
+            emp = new Employee(i, "thien"+i, "22");
+            Employee employeeUpdate = dao.updateEmployes(emp);
+            //retrieveAll();
+        }
     }
 
     static async Task<int> removeEmployee(int id)
